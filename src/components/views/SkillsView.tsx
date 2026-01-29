@@ -7,24 +7,14 @@ interface SkillsViewProps {
 
 const skillCategories = [
   {
-    name: 'LANGUAGES',
-    skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C++', 'R', 'SQL', 'Go'],
+    name: 'PROGRAMMING',
+    skills: ['Python', 'Java', 'JavaScript', 'HTML/CSS', 'C++', 'R', 'SQL'],
     color: 'primary'
   },
   {
-    name: 'FRONTEND',
-    skills: ['React', 'React Native', 'HTML/CSS', 'Tailwind CSS'],
+    name: 'TECHNOLOGIES',
+    skills: ['React', 'Node.js', 'MongoDB', 'Git', 'Matplotlib', 'Firebase', 'TensorFlow', 'Golang', 'AWS', 'Docker'],
     color: 'accent'
-  },
-  {
-    name: 'BACKEND & CLOUD',
-    skills: ['Node.js', 'AWS', 'Docker', 'MongoDB', 'Firebase', 'DynamoDB', 'Lambda'],
-    color: 'highlight'
-  },
-  {
-    name: 'ML & DATA',
-    skills: ['TensorFlow', 'Matplotlib', 'Data Analysis'],
-    color: 'pink'
   }
 ];
 
@@ -81,31 +71,6 @@ const SkillsView = ({ onBack }: SkillsViewProps) => {
           </motion.div>
         ))}
 
-        {/* Tools Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="pixel-border bg-card p-6"
-        >
-          <h2 className="font-display text-2xl text-foreground mb-4">
-            {'>'} TOOLS & OTHER
-          </h2>
-          
-          <div className="flex flex-wrap gap-3">
-            {['Git', 'VS Code', 'REST APIs', 'Agile', 'LUIS', 'QuickSight', 'Flutter', 'Dart'].map((tool, i) => (
-              <motion.span
-                key={tool}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.7 + i * 0.03 }}
-                className="px-4 py-2 font-mono text-sm border-2 border-border bg-muted text-muted-foreground hover:border-primary hover:text-primary transition-all cursor-default"
-              >
-                {tool}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Terminal */}
         <motion.div
