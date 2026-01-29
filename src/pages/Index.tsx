@@ -1,114 +1,83 @@
-import { useState, useRef, useEffect } from 'react';
-import HeroSection from '@/components/HeroSection';
-import AboutSection from '@/components/AboutSection';
-import ExperienceSection from '@/components/ExperienceSection';
-import SkillsSection from '@/components/SkillsSection';
-import EducationSection from '@/components/EducationSection';
-import ContactSection from '@/components/ContactSection';
-import Navigation from '@/components/Navigation';
-import Terminal from '@/components/Terminal';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import HomeView from '@/components/views/HomeView';
+import EducationView from '@/components/views/EducationView';
+import ExperienceView from '@/components/views/ExperienceView';
+import SkillsView from '@/components/views/SkillsView';
+import ContactView from '@/components/views/ContactView';
+
+type View = 'home' | 'education' | 'experience' | 'skills' | 'contact';
 
 const Index = () => {
-  const [currentSection, setCurrentSection] = useState('home');
-  const [showTerminal, setShowTerminal] = useState(false);
-  
-  const sectionRefs = {
-    about: useRef<HTMLDivElement>(null),
-    experience: useRef<HTMLDivElement>(null),
-    skills: useRef<HTMLDivElement>(null),
-    education: useRef<HTMLDivElement>(null),
-    contact: useRef<HTMLDivElement>(null),
-  };
+  const [currentView, setCurrentView] = useState<View>('home');
+  const [isBooting, setIsBooting] = useState(true);
 
-  const scrollToSection = (section: string) => {
-    const ref = sectionRefs[section as keyof typeof sectionRefs];
-    if (ref?.current) {
-      ref.current.scrollIntoView({ behavior: 'smooth' });
-      setCurrentSection(section);
-    }
-  };
-
-  const handleScrollDown = () => {
-    sectionRefs.about.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  // Track current section on scroll
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
-      
-      if (scrollPosition < window.innerHeight) {
-        setCurrentSection('home');
-        return;
-      }
-
-      for (const [section, ref] of Object.entries(sectionRefs)) {
-        if (ref.current) {
-          const { offsetTop, offsetHeight } = ref.current;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setCurrentSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Show terminal after initial load
-  useEffect(() => {
-    const timer = setTimeout(() => setShowTerminal(true), 1500);
+    // Simulate boot sequence
+    const timer = setTimeout(() => setIsBooting(false), 1500);
     return () => clearTimeout(timer);
   }, []);
 
-  return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navigation currentSection={currentSection} onNavigate={scrollToSection} />
-      
-      {/* Hero with Terminal */}
-      <div className="relative">
-        <HeroSection onScrollDown={handleScrollDown} />
-        
-        {/* Terminal Overlay */}
-        {showTerminal && (
+  const renderView = () => {
+    switch (currentView) {
+      case 'home':
+        return <HomeView onNavigate={setCurrentView} />;
+      case 'education':
+        return <EducationView onBack={() => setCurrentView('home')} />;
+      case 'experience':
+        return <ExperienceView onBack={() => setCurrentView('home')} />;
+      case 'skills':
+        return <SkillsView onBack={() => setCurrentView('home')} />;
+      case 'contact':
+        return <ContactView onBack={() => setCurrentView('home')} />;
+      default:
+        return <HomeView onNavigate={setCurrentView} />;
+    }
+  };
+
+  if (isBooting) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center crt-screen">
+        <div className="text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="absolute bottom-32 left-1/2 -translate-x-1/2 w-full px-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="font-display text-4xl text-primary text-glow mb-4"
           >
-            <Terminal 
-              onCommandExecute={scrollToSection} 
-              currentSection={currentSection} 
-            />
+            BOOTING SYSTEM...
           </motion.div>
-        )}
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
+            transition={{ duration: 1.2, ease: "linear" }}
+            className="h-2 bg-primary w-64 mx-auto"
+          />
+        </div>
       </div>
+    );
+  }
 
-      <div ref={sectionRefs.about}>
-        <AboutSection />
-      </div>
+  return (
+    <div className="min-h-screen bg-background crt-screen overflow-hidden">
+      {/* CRT Border Frame */}
+      <div className="fixed inset-4 border-4 border-primary/30 pointer-events-none z-50" />
       
-      <div ref={sectionRefs.experience}>
-        <ExperienceSection />
-      </div>
+      {/* Scanlines overlay */}
+      <div className="fixed inset-0 scanlines pointer-events-none z-40" />
       
-      <div ref={sectionRefs.skills}>
-        <SkillsSection />
-      </div>
-      
-      <div ref={sectionRefs.education}>
-        <EducationSection />
-      </div>
-      
-      <div ref={sectionRefs.contact}>
-        <ContactSection />
-      </div>
-
-      {/* Scanline Effect */}
-      <div className="fixed inset-0 pointer-events-none scanline opacity-30" />
+      {/* Main Content */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentView}
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.98 }}
+          transition={{ duration: 0.2 }}
+          className="min-h-screen"
+        >
+          {renderView()}
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };
