@@ -29,6 +29,8 @@ const HomeView = ({ onNavigate }: HomeViewProps) => {
     { id: 'contact', label: '[4] CONTACT', color: 'pink' },
   ] as const;
 
+  const resumeLink = "https://drive.google.com/file/d/1DHLbm0nb4f4BQQd59Bqus_RqhF57Man6/view";
+
   return (
     <div className="min-h-screen p-8 md:p-16 flex flex-col">
       {/* Header */}
@@ -68,13 +70,25 @@ const HomeView = ({ onNavigate }: HomeViewProps) => {
           className="mb-12"
         >
           <p className="font-mono text-lg md:text-xl text-foreground/80 leading-relaxed max-w-2xl">
-            Welcome to my corner of the web. Here's a quick look into my journey 
-            as a <span className="text-accent text-glow-accent">software engineer</span> and 
-            {' '}<span className="text-highlight text-glow-highlight">builder</span>.
+            Here's a quick overview of my <span className="text-accent text-glow-accent">CS career</span>.
           </p>
           <p className="font-mono text-sm text-muted-foreground mt-4">
-            {'>'} Incoming SWE @ Palantir | UNC Chapel Hill '26 | CS + Stats
+            {'>'} Incoming FDSE @ Palantir | UNC Chapel Hill '26 | CS + Stats
           </p>
+          
+          {/* Resume Link */}
+          <motion.a
+            href={resumeLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.9 }}
+            className="inline-flex items-center gap-2 mt-6 px-4 py-2 font-mono text-sm border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all"
+          >
+            <span>📄</span>
+            <span>VIEW RESUME</span>
+          </motion.a>
         </motion.div>
 
         {/* Navigation Menu */}

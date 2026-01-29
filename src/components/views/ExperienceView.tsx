@@ -11,23 +11,23 @@ const experiences = [
     id: 'palantir',
     company: 'PALANTIR TECHNOLOGIES',
     role: 'Forward Deployed Software Engineer',
-    location: 'New York City, NY',
+    location: 'New York City, New York',
     period: 'July 2026 - Present',
     status: 'INCOMING',
-    highlights: ['Incoming Forward Deployed Software Engineer'],
+    highlights: ['Incoming Forward Deployed Software Engineer (July)'],
     color: 'primary'
   },
   {
     id: 'mercor',
     company: 'MERCOR',
-    role: 'Machine Learning Engineer',
+    role: 'Machine Learning Engineer (Contract)',
     location: 'Remote',
-    period: 'Nov 2024 - Aug 2025',
+    period: 'Nov 2025 - Aug 2025',
     status: 'CONTRACT',
     highlights: [
-      'Built Python implementations within internal ML workflow tools',
-      'Added validation checks and runtime debugging tools',
-      'Developed ML code for LLM improvement at an AI lab'
+      'Built Python implementations within internal ML workflow tools to generate clean, executable task trajectories',
+      'Added validation checks and runtime debugging tools to catch issues (shape errors, broken data loaders, API misuse) and enforce reliable execution',
+      'Developed ML code and reasoning traces used as supervised trajectories for LLM improvement at an AI lab'
     ],
     color: 'accent'
   },
@@ -35,13 +35,13 @@ const experiences = [
     id: 'aws',
     company: 'AMAZON WEB SERVICES',
     role: 'Software Engineer Intern',
-    location: 'Seattle, WA',
+    location: 'Seattle, Washington',
     period: 'May 2025 - Aug 2025',
     status: 'INTERN',
     highlights: [
-      'Built interactive QuickSight dashboard unifying 20+ documents',
-      'Automated 3000+ requirements across 12+ countries',
-      'Cut data lookup time from 20-30 mins to 1-2 mins'
+      'Spearheaded the development of an interactive Amazon QuickSight dashboard that unified previously messy Seller of Record (SoR) requirements from 20+ documents into a single, filterable source of truth for stakeholders',
+      'Automated 3000+ requirements across 12+ countries, cutting data lookup and launch preparation time from 20–30 minutes to 1–2 minutes',
+      'Implemented backend using Java, AWS Lambda, DynamoDB, and RESTful API (Quip, EPS) integration to unify data scattered across 15+ Quip documents into a single source of truth'
     ],
     color: 'highlight'
   },
@@ -53,9 +53,9 @@ const experiences = [
     period: 'Apr 2025 - Present',
     status: 'FOUNDER',
     highlights: [
-      'Cherokee language learning app with quizzes & games',
-      'Built with React Native and TypeScript',
-      'Partnered with Harvard, Yale, and UPenn'
+      'Founded a Cherokee language learning app with quizzes, games, and stories using React Native and TypeScript',
+      'Set up a Node.js backend with MongoDB, indexing, and caching for faster data loading',
+      'Projected to impact 1000+ students with implementation plans in school districts on Cherokee lands in partnership with Ivy League institutions such as Harvard, Yale, and UPenn'
     ],
     color: 'pink'
   },
@@ -63,13 +63,13 @@ const experiences = [
     id: 'relias',
     company: 'RELIAS',
     role: 'Software Engineer Intern',
-    location: 'Raleigh, NC',
+    location: 'Raleigh, North Carolina',
     period: 'May 2024 - Jul 2024',
     status: 'INTERN',
     highlights: [
-      'Led development of AI chatbot for employee onboarding',
-      'Boosted engagement by 50%',
-      'Cut support tickets by 30%'
+      'Led development of an AI chatbot to help employees access resources and complete onboarding tasks easier',
+      'Utilized Node.js, LUIS for natural language understanding, and MongoDB with REST APIs to manage data',
+      'Boosted engagement by 50% and cut support tickets by 30% after integrating into internal SharePoint website'
     ],
     color: 'primary'
   },
@@ -81,9 +81,9 @@ const experiences = [
     period: 'Mar 2021 - Jul 2021',
     status: 'INTERN',
     highlights: [
-      'Built COVID-19 volunteering app reaching 1500+ users',
-      'Managed 1000+ volunteering tasks',
-      'Led weekly sprints using agile methodology'
+      'Launched a COVID-19 volunteering application (iOS/Android) using Dart and Flutter reaching 1500+ users',
+      'Managed 1000+ volunteering tasks and facilitated 750+ users in first 4 months',
+      'Implemented agile methodology and led weekly sprints to keep team on track and launch app on time'
     ],
     color: 'accent'
   }
