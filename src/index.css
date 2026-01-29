@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Space+Mono:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,76 +6,77 @@
 
 @layer base {
   :root {
-    /* Terminal-inspired dark theme */
-    --background: 220 20% 6%;
-    --foreground: 180 15% 90%;
+    /* Retro CRT terminal theme */
+    --background: 220 25% 4%;
+    --foreground: 120 100% 80%;
 
-    --card: 220 18% 10%;
-    --card-foreground: 180 15% 90%;
+    --card: 220 20% 8%;
+    --card-foreground: 120 100% 80%;
 
-    --popover: 220 18% 10%;
-    --popover-foreground: 180 15% 90%;
+    --popover: 220 20% 8%;
+    --popover-foreground: 120 100% 80%;
 
-    /* Cyan/teal accent - tech forward */
-    --primary: 175 80% 50%;
-    --primary-foreground: 220 20% 6%;
+    /* Phosphor green - classic terminal */
+    --primary: 120 100% 65%;
+    --primary-foreground: 220 25% 4%;
 
-    --secondary: 220 15% 15%;
-    --secondary-foreground: 180 15% 85%;
+    --secondary: 220 15% 12%;
+    --secondary-foreground: 120 80% 70%;
 
-    --muted: 220 15% 18%;
-    --muted-foreground: 180 10% 55%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 120 40% 50%;
 
-    --accent: 280 70% 60%;
-    --accent-foreground: 0 0% 100%;
+    /* Amber accent - classic retro */
+    --accent: 35 100% 55%;
+    --accent-foreground: 220 25% 4%;
 
-    /* Warm amber for highlights */
-    --highlight: 40 95% 55%;
-    --highlight-foreground: 220 20% 6%;
+    /* Cyan for highlights */
+    --highlight: 180 100% 60%;
+    --highlight-foreground: 220 25% 4%;
 
-    /* Green for success/terminal prompts */
-    --terminal: 140 70% 50%;
-    --terminal-foreground: 220 20% 6%;
+    /* Pink/magenta for variety */
+    --pink: 330 100% 65%;
+    --pink-foreground: 220 25% 4%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 15%;
-    --ring: 175 80% 50%;
+    --border: 120 50% 20%;
+    --input: 220 15% 12%;
+    --ring: 120 100% 65%;
 
-    --radius: 0.5rem;
+    --radius: 0px;
 
-    --sidebar-background: 220 18% 8%;
-    --sidebar-foreground: 180 15% 85%;
-    --sidebar-primary: 175 80% 50%;
-    --sidebar-primary-foreground: 220 20% 6%;
-    --sidebar-accent: 220 15% 15%;
-    --sidebar-accent-foreground: 180 15% 85%;
-    --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 175 80% 50%;
+    --sidebar-background: 220 20% 6%;
+    --sidebar-foreground: 120 100% 80%;
+    --sidebar-primary: 120 100% 65%;
+    --sidebar-primary-foreground: 220 25% 4%;
+    --sidebar-accent: 220 15% 12%;
+    --sidebar-accent-foreground: 120 100% 80%;
+    --sidebar-border: 120 50% 20%;
+    --sidebar-ring: 120 100% 65%;
   }
 
   .dark {
-    --background: 220 20% 6%;
-    --foreground: 180 15% 90%;
-    --card: 220 18% 10%;
-    --card-foreground: 180 15% 90%;
-    --popover: 220 18% 10%;
-    --popover-foreground: 180 15% 90%;
-    --primary: 175 80% 50%;
-    --primary-foreground: 220 20% 6%;
-    --secondary: 220 15% 15%;
-    --secondary-foreground: 180 15% 85%;
-    --muted: 220 15% 18%;
-    --muted-foreground: 180 10% 55%;
-    --accent: 280 70% 60%;
-    --accent-foreground: 0 0% 100%;
+    --background: 220 25% 4%;
+    --foreground: 120 100% 80%;
+    --card: 220 20% 8%;
+    --card-foreground: 120 100% 80%;
+    --popover: 220 20% 8%;
+    --popover-foreground: 120 100% 80%;
+    --primary: 120 100% 65%;
+    --primary-foreground: 220 25% 4%;
+    --secondary: 220 15% 12%;
+    --secondary-foreground: 120 80% 70%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 120 40% 50%;
+    --accent: 35 100% 55%;
+    --accent-foreground: 220 25% 4%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 220 15% 20%;
-    --input: 220 15% 15%;
-    --ring: 175 80% 50%;
+    --border: 120 50% 20%;
+    --input: 220 15% 12%;
+    --ring: 120 100% 65%;
   }
 }
 
@@ -85,7 +86,8 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Space Mono', monospace;
   }
 
   ::selection {
@@ -94,47 +96,89 @@
 }
 
 @layer utilities {
+  .font-display {
+    font-family: 'VT323', monospace;
+  }
+
   .font-mono {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Space Mono', monospace;
   }
 
-  .font-sans {
-    font-family: 'Inter', sans-serif;
+  .text-glow {
+    text-shadow: 
+      0 0 5px hsl(var(--primary)),
+      0 0 10px hsl(var(--primary)),
+      0 0 20px hsl(var(--primary) / 0.5);
   }
 
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-highlight;
+  .text-glow-accent {
+    text-shadow: 
+      0 0 5px hsl(var(--accent)),
+      0 0 10px hsl(var(--accent)),
+      0 0 20px hsl(var(--accent) / 0.5);
   }
 
-  .glow-primary {
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.3),
-                0 0 40px hsl(var(--primary) / 0.1);
+  .text-glow-highlight {
+    text-shadow: 
+      0 0 5px hsl(var(--highlight)),
+      0 0 10px hsl(var(--highlight)),
+      0 0 20px hsl(var(--highlight) / 0.5);
   }
 
-  .glow-accent {
-    box-shadow: 0 0 20px hsl(var(--accent) / 0.3),
-                0 0 40px hsl(var(--accent) / 0.1);
+  .box-glow {
+    box-shadow: 
+      0 0 5px hsl(var(--primary) / 0.5),
+      0 0 10px hsl(var(--primary) / 0.3),
+      inset 0 0 20px hsl(var(--primary) / 0.1);
   }
 
-  .terminal-cursor {
-    animation: blink 1s infinite;
+  .crt-flicker {
+    animation: flicker 0.15s infinite;
   }
 
-  .typing-effect {
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typing 2s steps(30, end);
-  }
-
-  .scanline {
-    background: linear-gradient(
-      to bottom,
-      transparent 50%,
-      hsl(var(--primary) / 0.03) 50%
+  .scanlines {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(var(--primary) / 0.03) 2px,
+      hsl(var(--primary) / 0.03) 4px
     );
-    background-size: 100% 4px;
-    pointer-events: none;
   }
+
+  .pixel-border {
+    border: 3px solid hsl(var(--primary));
+    box-shadow: 
+      3px 3px 0 hsl(var(--primary) / 0.5),
+      inset 0 0 0 1px hsl(var(--primary) / 0.3);
+  }
+
+  .retro-button {
+    @apply relative px-6 py-3 font-display text-xl uppercase tracking-wider;
+    @apply bg-secondary border-2 border-primary text-primary;
+    @apply transition-all duration-100;
+    box-shadow: 4px 4px 0 hsl(var(--primary));
+  }
+
+  .retro-button:hover {
+    box-shadow: 2px 2px 0 hsl(var(--primary));
+    transform: translate(2px, 2px);
+  }
+
+  .retro-button:active {
+    box-shadow: 0px 0px 0 hsl(var(--primary));
+    transform: translate(4px, 4px);
+  }
+
+  .retro-button.active {
+    @apply bg-primary text-primary-foreground;
+    box-shadow: 2px 2px 0 hsl(var(--accent));
+  }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.98; }
 }
 
 @keyframes blink {
@@ -147,34 +191,64 @@
   to { width: 100%; }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
 }
 
-@keyframes pulse-glow {
-  0%, 100% { 
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
-  }
-  50% { 
-    box-shadow: 0 0 40px hsl(var(--primary) / 0.5);
-  }
+.cursor-blink {
+  animation: blink 1s step-end infinite;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
   background: hsl(var(--background));
+  border-left: 2px solid hsl(var(--primary) / 0.3);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted));
-  border-radius: 4px;
+  background: hsl(var(--primary) / 0.5);
+  border: 2px solid hsl(var(--primary));
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--primary) / 0.5);
+  background: hsl(var(--primary));
+}
+
+/* CRT screen effect */
+.crt-screen {
+  position: relative;
+}
+
+.crt-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    hsl(var(--background) / 0.2) 100%
+  );
+  pointer-events: none;
+}
+
+.crt-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    hsl(0 0% 0% / 0.1) 2px,
+    hsl(0 0% 0% / 0.1) 4px
+  );
+  pointer-events: none;
 }
