@@ -71,19 +71,6 @@ const SkillsView = ({ onBack }: SkillsViewProps) => {
           </motion.div>
         ))}
 
-
-        {/* Terminal */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="font-mono text-sm text-muted-foreground"
-        >
-          <p>{'>'} skills.getAll() returned {skillCategories.reduce((acc, cat) => acc + cat.skills.length, 0)} items</p>
-          <p className="mt-2">
-            {'>'} <span className="text-primary cursor-blink">_</span>
-          </p>
-        </motion.div>
       </div>
     </div>
   );

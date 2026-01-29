@@ -96,18 +96,6 @@ const EducationView = ({ onBack }: EducationViewProps) => {
           ))}
         </div>
 
-        {/* Terminal prompt */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="mt-12 font-mono text-sm text-muted-foreground"
-        >
-          <p>{'>'} education.load() completed successfully</p>
-          <p className="mt-2">
-            {'>'} <span className="text-primary cursor-blink">_</span>
-          </p>
-        </motion.div>
       </motion.div>
     </div>
   );
