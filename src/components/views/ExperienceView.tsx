@@ -192,6 +192,12 @@ const ExperienceView = ({ onBack }: ExperienceViewProps) => {
               ))}
             </div>
 
+            {/* Terminal */}
+            <div className="mt-8 pt-6 border-t border-border">
+              <p className="font-mono text-xs text-muted-foreground">
+                {'>'} exp.{selectedExp.id}.render() <span className="text-primary">SUCCESS</span>
+              </p>
+            </div>
           </motion.div>
         </AnimatePresence>
       </div>
