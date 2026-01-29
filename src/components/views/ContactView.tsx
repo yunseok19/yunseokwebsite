@@ -135,19 +135,6 @@ const ContactView = ({ onBack }: ContactViewProps) => {
           </a>
         </motion.div>
 
-        {/* Terminal */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="mt-12 font-mono text-sm text-muted-foreground"
-        >
-          <p>{'>'} contact.init() ready</p>
-          <p>{'>'} awaiting connection...</p>
-          <p className="mt-2">
-            {'>'} <span className="text-primary cursor-blink">_</span>
-          </p>
-        </motion.div>
 
         {/* Footer */}
         <motion.footer
