@@ -6,77 +6,77 @@
 
 @layer base {
   :root {
-    /* Retro UNC Carolina Blue theme */
-    --background: 210 30% 6%;
-    --foreground: 199 80% 75%;
+    /* Clean UNC Blue Retro theme - bright & friendly */
+    --background: 210 30% 96%;
+    --foreground: 210 25% 15%;
 
-    --card: 210 25% 10%;
-    --card-foreground: 199 80% 75%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 25% 15%;
 
-    --popover: 210 25% 10%;
-    --popover-foreground: 199 80% 75%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 25% 15%;
 
     /* Carolina Blue - UNC primary */
     --primary: 199 89% 48%;
-    --primary-foreground: 210 30% 6%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 20% 14%;
-    --secondary-foreground: 199 70% 65%;
+    --secondary: 210 20% 90%;
+    --secondary-foreground: 210 25% 25%;
 
-    --muted: 210 20% 18%;
-    --muted-foreground: 199 40% 55%;
+    --muted: 210 15% 92%;
+    --muted-foreground: 210 15% 45%;
 
-    /* Gold/amber accent - retro contrast */
-    --accent: 45 100% 55%;
-    --accent-foreground: 210 30% 6%;
+    /* Navy accent */
+    --accent: 210 60% 35%;
+    --accent-foreground: 0 0% 100%;
 
-    /* Light blue for highlights */
-    --highlight: 199 100% 70%;
-    --highlight-foreground: 210 30% 6%;
+    /* Warm highlight */
+    --highlight: 199 70% 55%;
+    --highlight-foreground: 0 0% 100%;
 
-    /* Warm coral for variety */
-    --pink: 15 90% 60%;
-    --pink-foreground: 210 30% 6%;
+    /* Coral for variety */
+    --pink: 15 80% 55%;
+    --pink-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 199 50% 25%;
-    --input: 210 20% 14%;
+    --border: 210 20% 82%;
+    --input: 210 20% 90%;
     --ring: 199 89% 48%;
 
     --radius: 0px;
 
-    --sidebar-background: 210 25% 8%;
-    --sidebar-foreground: 199 80% 75%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 25% 15%;
     --sidebar-primary: 199 89% 48%;
-    --sidebar-primary-foreground: 210 30% 6%;
-    --sidebar-accent: 210 20% 14%;
-    --sidebar-accent-foreground: 199 80% 75%;
-    --sidebar-border: 199 50% 25%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 92%;
+    --sidebar-accent-foreground: 210 25% 15%;
+    --sidebar-border: 210 20% 85%;
     --sidebar-ring: 199 89% 48%;
   }
 
   .dark {
-    --background: 210 30% 6%;
-    --foreground: 199 80% 75%;
-    --card: 210 25% 10%;
-    --card-foreground: 199 80% 75%;
-    --popover: 210 25% 10%;
-    --popover-foreground: 199 80% 75%;
-    --primary: 199 89% 48%;
-    --primary-foreground: 210 30% 6%;
-    --secondary: 210 20% 14%;
-    --secondary-foreground: 199 70% 65%;
-    --muted: 210 20% 18%;
-    --muted-foreground: 199 40% 55%;
-    --accent: 45 100% 55%;
-    --accent-foreground: 210 30% 6%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 199 50% 25%;
-    --input: 210 20% 14%;
-    --ring: 199 89% 48%;
+    --background: 210 25% 12%;
+    --foreground: 210 20% 90%;
+    --card: 210 20% 16%;
+    --card-foreground: 210 20% 90%;
+    --popover: 210 20% 16%;
+    --popover-foreground: 210 20% 90%;
+    --primary: 199 89% 55%;
+    --primary-foreground: 210 25% 10%;
+    --secondary: 210 15% 22%;
+    --secondary-foreground: 210 20% 80%;
+    --muted: 210 15% 25%;
+    --muted-foreground: 210 15% 60%;
+    --accent: 210 50% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 20% 28%;
+    --input: 210 15% 22%;
+    --ring: 199 89% 55%;
   }
 }
 
@@ -105,64 +105,37 @@
   }
 
   .text-glow {
-    text-shadow: 
-      0 0 5px hsl(var(--primary)),
-      0 0 10px hsl(var(--primary)),
-      0 0 20px hsl(var(--primary) / 0.5);
+    /* Clean style - no neon */
   }
 
   .text-glow-accent {
-    text-shadow: 
-      0 0 5px hsl(var(--accent)),
-      0 0 10px hsl(var(--accent)),
-      0 0 20px hsl(var(--accent) / 0.5);
+    /* Clean style - no neon */
   }
 
   .text-glow-highlight {
-    text-shadow: 
-      0 0 5px hsl(var(--highlight)),
-      0 0 10px hsl(var(--highlight)),
-      0 0 20px hsl(var(--highlight) / 0.5);
+    /* Clean style - no neon */
   }
 
   .box-glow {
-    box-shadow: 
-      0 0 5px hsl(var(--primary) / 0.5),
-      0 0 10px hsl(var(--primary) / 0.3),
-      inset 0 0 20px hsl(var(--primary) / 0.1);
-  }
-
-  .crt-flicker {
-    animation: flicker 0.15s infinite;
-  }
-
-  .scanlines {
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      hsl(var(--primary) / 0.03) 2px,
-      hsl(var(--primary) / 0.03) 4px
-    );
+    box-shadow: 0 4px 12px hsl(var(--primary) / 0.15);
   }
 
   .pixel-border {
     border: 3px solid hsl(var(--primary));
-    box-shadow: 
-      3px 3px 0 hsl(var(--primary) / 0.5),
-      inset 0 0 0 1px hsl(var(--primary) / 0.3);
+    box-shadow: 4px 4px 0 hsl(var(--primary) / 0.2);
   }
 
   .retro-button {
     @apply relative px-6 py-3 font-display text-xl uppercase tracking-wider;
-    @apply bg-secondary border-2 border-primary text-primary;
+    @apply bg-card border-2 border-primary text-primary;
     @apply transition-all duration-100;
-    box-shadow: 4px 4px 0 hsl(var(--primary));
+    box-shadow: 4px 4px 0 hsl(var(--primary) / 0.3);
   }
 
   .retro-button:hover {
-    box-shadow: 2px 2px 0 hsl(var(--primary));
+    box-shadow: 2px 2px 0 hsl(var(--primary) / 0.3);
     transform: translate(2px, 2px);
+    @apply bg-primary text-primary-foreground;
   }
 
   .retro-button:active {
@@ -176,27 +149,9 @@
   }
 }
 
-@keyframes flicker {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.98; }
-}
-
 @keyframes blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes glitch {
-  0%, 100% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
 }
 
 .cursor-blink {
@@ -205,50 +160,18 @@
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(var(--background));
-  border-left: 2px solid hsl(var(--primary) / 0.3);
+  background: hsl(var(--muted));
 }
 
 ::-webkit-scrollbar-thumb {
   background: hsl(var(--primary) / 0.5);
-  border: 2px solid hsl(var(--primary));
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--primary));
-}
-
-/* CRT screen effect */
-.crt-screen {
-  position: relative;
-}
-
-.crt-screen::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    ellipse at center,
-    transparent 0%,
-    hsl(var(--background) / 0.2) 100%
-  );
-  pointer-events: none;
-}
-
-.crt-screen::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    hsl(0 0% 0% / 0.1) 2px,
-    hsl(0 0% 0% / 0.1) 4px
-  );
-  pointer-events: none;
 }

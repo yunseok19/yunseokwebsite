@@ -58,12 +58,9 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background crt-screen overflow-hidden">
-      {/* CRT Border Frame */}
-      <div className="fixed inset-4 border-4 border-primary/30 pointer-events-none z-50" />
-      
-      {/* Scanlines overlay */}
-      <div className="fixed inset-0 scanlines pointer-events-none z-40" />
+    <div className="min-h-screen bg-background overflow-hidden">
+      {/* Subtle Border Frame */}
+      <div className="fixed inset-4 border-2 border-primary/20 pointer-events-none z-50 rounded-sm" />
       
       {/* Main Content */}
       <AnimatePresence mode="wait">
