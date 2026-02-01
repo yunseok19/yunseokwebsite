@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import profilePhoto from '@/assets/profile-photo.png';
 
 interface HomeViewProps {
   onNavigate: (view: 'education' | 'experience' | 'skills' | 'contact') => void;
@@ -48,7 +49,8 @@ const HomeView = ({ onNavigate }: HomeViewProps) => {
       </motion.header>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col justify-center max-w-4xl">
+      <div className="flex-1 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12">
+        <div className="flex-1 max-w-2xl">
         {/* Greeting */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -119,6 +121,23 @@ const HomeView = ({ onNavigate }: HomeViewProps) => {
             ))}
           </div>
         </motion.nav>
+        </div>
+
+        {/* Profile Photo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.2 }}
+          className="flex-shrink-0 hidden lg:block"
+        >
+          <div className="pixel-border p-2 bg-card">
+            <img 
+              src={profilePhoto} 
+              alt="Yunseok Hwang" 
+              className="w-72 h-72 object-cover"
+            />
+          </div>
+        </motion.div>
       </div>
 
       {/* Footer */}
