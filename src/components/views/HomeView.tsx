@@ -30,7 +30,7 @@ const HomeView = ({ onNavigate }: HomeViewProps) => {
     { id: 'contact', label: '[4] CONTACT', color: 'pink' },
   ] as const;
 
-  const resumeLink = "https://drive.google.com/file/d/1DHLbm0nb4f4BQQd59Bqus_RqhF57Man6/view";
+  const resumeLink = "https://drive.google.com/file/d/1vlw1_F-6hvPXeUJIzuSAnpm63rqMTx6B/view?usp=sharing";
 
   return (
     <div className="min-h-screen p-8 md:p-16 flex flex-col">
