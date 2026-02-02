@@ -33,8 +33,8 @@ const ContactView = ({ onBack }: ContactViewProps) => {
     { 
       icon: Linkedin, 
       label: 'LINKEDIN', 
-      value: 'yunseok-hwang',
-      href: 'https://linkedin.com/in/yunseok-hwang',
+      value: 'yunseok19',
+      href: 'https://www.linkedin.com/in/yunseok19/',
       copyable: false
     },
   ];

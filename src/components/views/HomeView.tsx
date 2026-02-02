@@ -30,7 +30,7 @@ const HomeView = ({ onNavigate }: HomeViewProps) => {
     { id: 'contact', label: '[4] CONTACT', color: 'pink' },
   ] as const;
 
-  const resumeLink = "https://drive.google.com/file/d/1vlw1_F-6hvPXeUJIzuSAnpm63rqMTx6B/view?usp=sharing";
+
 
   return (
     <div className="min-h-screen p-8 md:p-16 flex flex-col">
@@ -77,20 +77,6 @@ const HomeView = ({ onNavigate }: HomeViewProps) => {
           <p className="font-mono text-sm text-muted-foreground mt-4">
             {'>'} Incoming FDSE @ Palantir | UNC Chapel Hill '26 | CS + Stats
           </p>
-          
-          {/* Resume Link */}
-          <motion.a
-            href={resumeLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.9 }}
-            className="inline-flex items-center gap-2 mt-6 px-4 py-2 font-mono text-sm border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all"
-          >
-            <span>📄</span>
-            <span>VIEW RESUME</span>
-          </motion.a>
         </motion.div>
 
         {/* Navigation Menu */}
@@ -140,19 +126,6 @@ const HomeView = ({ onNavigate }: HomeViewProps) => {
         </motion.div>
       </div>
 
-      {/* Footer */}
-      <motion.footer
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="mt-auto pt-8"
-      >
-        <div className="flex flex-wrap gap-6 text-sm font-mono text-muted-foreground">
-          <span>{'>'} PRESS [1-4] OR CLICK TO NAVIGATE</span>
-          <span className="text-primary">■</span>
-          <span>SYSTEM READY</span>
-        </div>
-      </motion.footer>
     </div>
   );
 };
