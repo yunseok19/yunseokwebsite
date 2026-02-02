@@ -68,7 +68,7 @@ const ContactView = ({ onBack }: ContactViewProps) => {
           transition={{ delay: 0.2 }}
           className="font-mono text-lg text-foreground/80 mb-12"
         >
-          {'>'} Ready to connect? Feel free to reach out for opportunities, 
+          {'>'} Feel free to reach out for opportunities, 
           collaborations, or just to say hello.
         </motion.p>
 
@@ -135,18 +135,6 @@ const ContactView = ({ onBack }: ContactViewProps) => {
           </a>
         </motion.div>
 
-
-        {/* Footer */}
-        <motion.footer
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="mt-16 pt-8 border-t border-border"
-        >
-          <p className="font-mono text-xs text-muted-foreground text-center">
-            © 2026 YUNSEOK HWANG | BUILT WITH REACT + TAILWIND
-          </p>
-        </motion.footer>
       </div>
     </div>
   );
