@@ -22,7 +22,7 @@ const experiences = [
     company: 'MERCOR',
     role: 'Machine Learning Engineer (Contract)',
     location: 'Remote',
-    period: 'Nov 2025 - Aug 2025',
+    period: 'Nov 2025 - Present',
     status: 'CONTRACT',
     highlights: [
       'Built Python implementations within internal ML workflow tools to generate clean, executable task trajectories',
