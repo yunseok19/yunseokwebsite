@@ -72,7 +72,7 @@ const HomeView = ({ onNavigate }: HomeViewProps) => {
           className="mb-12"
         >
           <p className="font-mono text-lg md:text-xl text-foreground/80 leading-relaxed max-w-2xl">
-            Here's a quick overview of my <span className="text-accent text-glow-accent">CS career</span>.
+            Here's a quick overview of my <span className="text-accent text-glow-accent">CS career</span>. For fun, I like to play soccer, poker, and eat good food.
           </p>
           <p className="font-mono text-sm text-muted-foreground mt-4">
             {'>'} Incoming FDSE @ Palantir | UNC Chapel Hill '26 | CS + Stats
